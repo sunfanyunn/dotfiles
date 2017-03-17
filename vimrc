@@ -42,7 +42,7 @@ fu! IoStream()
     call append(38, "ostream& operator << (ostream &o, const map<T1, T2> &mp) {")
     call append(39, "    o << \"{\";")
     call append(40, "    for (auto it=mp.begin(); it!=mp.end(); it++) {")
-    call append(41, "        o << (it==mp.begin()?\"\":\", \") << it->fi << \":\" << it->se;")
+    call append(41, "        o << (it==mp.begin()?\"\":\", \") << it->first << \":\" << it->second;")
     call append(42, "    }")
     call append(43, "    o << \"}\";")
     call append(44, "    return o;")
@@ -106,7 +106,7 @@ set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden		" Hide buffers when they are abandoned
-"set mouse=a		" Enable mouse usage (all modes)
+set mouse=a		" Enable mouse usage (all modes)
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
@@ -172,10 +172,10 @@ autocmd Filetype cpp imap <C-S-c> jj<C-S-c>
 autocmd Filetype cpp nmap <C-S-x> 0xx
 autocmd Filetype cpp imap <C-S-x> jj<C-S-x>
 
-autocmd FileType python nmap <F11> <ESC>\x:w<CR>:!./%<CR>
-autocmd FileType python nmap <F12> <ESC>\x:w<CR>:!./%<CR>
-autocmd FileType python imap <F11> <ESC>\x:w<CR>:!./%<CR>
-autocmd FileType python imap <F12> <ESC>\x:w<CR>:!./%<CR>
+autocmd FileType python nmap <F11> <ESC>\x:w<CR>:!python3 %<CR>
+autocmd FileType python nmap <F12> <ESC>\x:w<CR>:!python3 %<CR>
+autocmd FileType python imap <F11> <ESC>\x:w<CR>:!python3 %<CR>
+autocmd FileType python imap <F12> <ESC>\x:w<CR>:!python3 %<CR>
 
 autocmd FileType tex nmap <F10> <ESC>\x:w<CR>:!gnome-open %<.pdf<CR><CR>
 autocmd FileType tex nmap <F12> <ESC>\x:w<CR>:!xelatex %<CR>
