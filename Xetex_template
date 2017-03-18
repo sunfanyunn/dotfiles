@@ -2,6 +2,8 @@
 \usepackage{titlesec}
 \usepackage{verbatim}
 %provides multi-line comment syntax : \begin{comment} \end{comment}
+\usepackage{xeCJK}
+%provides traditional chinese
 \usepackage[xetex]{graphicx}
 
 \begin{comment}
