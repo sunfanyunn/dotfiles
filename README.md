@@ -1,6 +1,6 @@
 # General-configure
 
-vim cheat sheet
+vim cheat sheet<br>
 . ==> repeat last change in normal mode
 
 The command to repeat an f is ; (semicolon)
