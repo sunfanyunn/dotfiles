@@ -1,9 +1,10 @@
 \documentclass{article}
 \usepackage{titlesec}
-\usepackage{verbatim}
 %provides multi-line comment syntax : \begin{comment} \end{comment}
-\usepackage{xeCJK}
+\usepackage{verbatim}
 %provides traditional chinese
+\usepackage{xeCJK}
+
 \usepackage[xetex]{graphicx}
 
 \begin{comment}
@@ -17,7 +18,7 @@
 
 
 
-\title{NASA hw2}
+\title{Title}
 \author{B04902045 孫凡耘}
 \date{\today}
 
@@ -31,7 +32,7 @@
     n = 5, Probability: ${1 \over 32}$ \newline\newline
     Delay(K=4): ${4*512 bits\over 10 Mbps} = 2.048*10^{-3} $
     \newpage
-    \subsection{3}
+    \subsection*{3}
         Basically, I used the same command overall.\newline
         Workstation(server): iperf -s\newline
         PC(client): iperf -c \textless serverIP\textgreater \space\space -t 120 -i 10\newline
