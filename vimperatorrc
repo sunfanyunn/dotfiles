@@ -1,0 +1,27 @@
+" Cheat sheet
+" Disable vimperator temporarily: Shift Esc
+
+
+noremap j 5j
+noremap k 5k
+
+
+" Load configuration file into current browser, useful for updating after editing this file.
+command! sourcerc :source ~/.vimperatorrc
+
+
+javascript function vimperatortoggle() { if (is_vimperator_active) { liberator.execute(':disable') } else { liberator.execute(':enable') }; }
+command! vimperatortoggle javascript vimperatortoggle()
+
+" Run :disable to disable Vimperator and resume normal Firefox behavior.
+javascript function disable() { is_vimperator_active = false; }
+command! disable javascript disable()
+
+" Run :enable to enable Vimperator.
+javascript function enable() { is_vimperator_active = true; }
+command! enable javascript enable()
+:enable
+
+
+" Press 'F10' to toggle Vimperator
+noremap <F10> :vimperatortoggle<CR>
