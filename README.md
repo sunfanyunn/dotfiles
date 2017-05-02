@@ -12,6 +12,13 @@ vim cheat sheet<br>
 3. Type the new text.
 4. Press Esc to apply the changes to all selected lines.
 
+You can use it with the d command, to delete all lines that contain a particular pattern, or all lines that do not contain a pattern. 
+
+For example, to delete all lines containing "profile" (remove the /d to show the lines that the command will delete):
+:g/profile/d
+More complex patterns can be used, such as deleting all lines that are empty or that contain only whitespace:
+:g/^\s*$/d
+
 
 The command to repeat an f is ; (semicolon)
 , (comma) reverses the direction of the search.
