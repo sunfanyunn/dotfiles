@@ -117,6 +117,11 @@ autocmd FileType python nmap <F12> <ESC>\x:w<CR>:!python3 %<CR>
 autocmd FileType python imap <F11> <ESC>\x:w<CR>:!python3 %<CR>
 autocmd FileType python imap <F12> <ESC>\x:w<CR>:!python3 %<CR>
 
+autocmd Filetype python nmap <C-S-c> 0i#<Esc>
+autocmd Filetype python imap <C-S-c> <Esc><C-S-c>
+autocmd Filetype python nmap <C-S-x> 0x
+autocmd Filetype python imap <C-S-x> <Esc><C-S-x>
+
 autocmd FileType tex nmap <F10> <ESC>\x:w<CR>:!gnome-open %<.pdf<CR><CR>
 autocmd FileType tex nmap <F12> <ESC>\x:w<CR>:!xelatex %<CR>
 autocmd FileType tex imap <F10> <ESC>\x:w<CR>:!gnome-open %<.pdf<CR><CR>
@@ -133,7 +138,7 @@ set foldnestmax=1
 set foldminlines=1
 
 syntax on
-"execute pathogen#infect()
+execute pathogen#infect()
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
