@@ -138,7 +138,6 @@ set foldnestmax=1
 set foldminlines=1
 
 syntax on
-execute pathogen#infect()
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
