@@ -5,15 +5,15 @@
 
 * . ==> repeat last change in normal mode
 * same command on contiguous lines
-1. Select the lines you want to modify using Ctrl-v.
-2. Press:
-    * I: Insert before what's selected.
-    * A: Append after what's selected.
-    * c: Replace what's selected.
-3. Type the new text.
-4. Press Esc to apply the changes to all selected lines.
+	1. Select the lines you want to modify using Ctrl-v.
+	2. Press:
+	    * I: Insert before what's selected.
+	    * A: Append after what's selected.
+	    * c: Replace what's selected.
+	3. Type the new text.
+	4. Press Esc to apply the changes to all selected lines.
 
-You can use it with the d command, to delete all lines that contain a particular pattern, or all lines that do not contain a pattern. 
+	You can use it with the d command, to delete all lines that contain a particular pattern, or all lines that do not contain a pattern. 
 
 For example, to delete all lines containing "profile" (remove the /d to show the lines that the command will delete):
 $ :g/profile/d
