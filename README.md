@@ -1,5 +1,6 @@
 # General cheat sheet
 * Terminal: Ctrl-A/Ctrl-E for Home/End
+* vimperator: zZ ==> reset zoom
 
 # Vim cheat sheet
 
@@ -20,24 +21,19 @@
 	<br>**$ :g/^\s*$/d**
 
 
-The command to repeat an f is ; (semicolon)
-, (comma) reverses the direction of the search.
+* The command to repeat an f is ; (semicolon) <br> , (comma) reverses the direction of the search.
 
-vimperator cheat sheet
-zZ ==> reset zoom
+* Use the normal command in Ex mode to execute the macro on multiple/all lines:
+
+	Execute the macro stored in register a on lines 5 through 10.<br>
+	**:5,10norm! @a**
+
+	Execute the macro stored in register a on lines 5 through the end of the file.<br>
+	**:5,$norm! @a**
+
+	Execute the macro stored in register a on all lines.<br>
+	**:%norm! @a**
 	
-
-Use the normal command in Ex mode to execute the macro on multiple/all lines:
-
-Execute the macro stored in register a on lines 5 through 10.<br>
-:5,10norm! @a
-
-Execute the macro stored in register a on lines 5 through the end of the file.<br>
-:5,$norm! @a
-
-Execute the macro stored in register a on all lines.<br>
-:%norm! @a
-
-Execute the macro store in register a on all lines matching pattern.<br>
-:g/pattern/norm! @a
+	Execute the macro store in register a on all lines matching pattern.<br>
+	**:g/pattern/norm! @a**
 
