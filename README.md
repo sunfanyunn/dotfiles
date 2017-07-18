@@ -1,8 +1,11 @@
 # General-configure
 
-vim cheat sheet<br>
-. ==> repeat last change in normal mode
+** General cheat sheet
+* Terminal: Ctrl-A/Ctrl-E for Home/End
 
+** Vim cheat sheet
+
+. ==> repeat last change in normal mode
 
 1. Select the lines you want to modify using Ctrl-v.
 2. Press:
@@ -40,3 +43,4 @@ Execute the macro stored in register a on all lines.<br>
 
 Execute the macro store in register a on all lines matching pattern.<br>
 :g/pattern/norm! @a
+
