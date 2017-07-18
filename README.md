@@ -1,6 +1,6 @@
 # General-configure
 
-** General cheat sheet
+## General cheat sheet
 * Terminal: Ctrl-A/Ctrl-E for Home/End
 
 ** Vim cheat sheet
