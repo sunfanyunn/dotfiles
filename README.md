@@ -3,7 +3,7 @@
 ## General cheat sheet
 * Terminal: Ctrl-A/Ctrl-E for Home/End
 
-** Vim cheat sheet
+## Vim cheat sheet
 
 . ==> repeat last change in normal mode
 
