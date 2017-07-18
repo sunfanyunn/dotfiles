@@ -15,9 +15,9 @@
 
 * You can use it with the d command, to delete all lines that contain a particular pattern, or all lines that do not contain a pattern. 
 	* For example, to delete all lines containing "profile" (remove the /d to show the lines that the command will delete):
-	$ :g/profile/d
+	<br>**$ :g/profile/d**
 	* More complex patterns can be used, such as deleting all lines that are empty or that contain only whitespace:
-	$ :g/^\s*$/d
+	<br>**$ :g/^\s*$/d**
 
 
 The command to repeat an f is ; (semicolon)
