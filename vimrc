@@ -188,6 +188,7 @@ set fdm=indent
 set foldlevel=0
 set foldnestmax=1
 set foldminlines=1
+set hls
 
 syntax on
 
