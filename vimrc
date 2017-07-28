@@ -126,7 +126,7 @@ set softtabstop=4
 set autoindent
 set smartindent
 
-autocmd FileType python set tw=80 cc=0
+set tw=80 cc=80
 autocmd FileType make set noexpandtab
 
 set pastetoggle=<F2>
