@@ -1,0 +1,27 @@
+git checkout develop # make sure you're on develop
+git pull origin develop # pull to sync
+git checkout -b feature/xxx # create and switch to feature branch
+git add some_thing_a
+git add some_thing_b
+git commit -m "Modify sth_a and _b" # start with strong vocab, capitalized. No full stop at the end.
+... # some other commit
+
+git checkout develop # go back to develop
+git pull origin develop # make sure your develop sync with latest commit
+git merge --no-ff feature/xxx # non fast forward to beautify the node graph
+
+# if conflict
+# ---
+fix all the conflict
+git add the_conflict_file
+git commit
+# ---
+
+# if forget to pull before merge
+# ---
+git reset --hard HEAD~1
+git pull origin develop
+git merge --no-ff feature/xxx
+# ---
+
+git push origin develop
