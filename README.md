@@ -1,8 +1,8 @@
-# General cheat sheet
+## General cheat sheet
 * Terminal: Ctrl-A/Ctrl-E for Home/End
 * vimperator: zZ ==> reset zoom
 
-# Vim cheat sheet
+## Vim cheat sheet
 
 * . ==> repeat last change in normal mode
 * same command on contiguous lines
@@ -37,3 +37,6 @@
 	Execute the macro store in register a on all lines matching pattern.<br>
 	**:g/pattern/norm! @a**
 
+## Bug list
+### js 
+* with 'use strict' keyword, omitting declaration can lead to undesirable behaviors
