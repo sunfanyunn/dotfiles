@@ -1,62 +1,33 @@
-autocmd FileType cpp call IoStream()
-fu! IoStream()
-    if line("$") == 1
-    call append(0, "#include <bits/stdc++.h>")
-    call append(1, "using namespace std;")
-    call append(2, "#ifdef DEBUG")
-    call append(3, "    #define debug(...) printf(__VA_ARGS__)")
-    call append(4, "#else")
-    call append(5, "    #define debug(...) (void)0")
-    call append(6, "#endif")
-	call append(7, "#define LL long long")
-    call append(8, "#define SZ(x) ((int)(x).size())")
-	call append(9, "//const int inf = 0x7fffffff; //beware overflow")
-	call append(10, "//const LL INF = 0x7fffffffffffffff; //beware overflow")
-    call append(11, "#define IOS ios_base::sync_with_stdio(0); cin.tie(0)") 
-    call append(12, "template<typename A, typename B>")
-    call append(13, "ostream& operator <<(ostream &s, const pair<A,B> &p) {")
-    call append(14, "     return s<<\"(\"<<p.first<<\",\"<<p.second<<\")\";")
-    call append(15, "}")
-    call append(16, "template<typename T>")
-    call append(17, "ostream& operator <<(ostream &s, const vector<T> &c) {")
-    call append(18, "    s << \"[ \";")
-    call append(19, "    for (auto it : c) s << it << \" \";")
-    call append(20, "    s << \"]\";")
-    call append(21, "    return s;")
-    call append(22, "}")
-    call append(23, "template<typename T>")
-    call append(24, "ostream& operator << (ostream &o, const set<T> &st) {")
-    call append(25, "    o << \"{\";")
-    call append(26, "    for (auto it=st.begin(); it!=st.end(); it++) o << (it==st.begin() ? \"\" : \", \") << *it;")
-    call append(27, "    return o << \"}\";")
-    call append(28, "}")
-    call append(29, "template<typename T1, typename T2>")
-    call append(30, "ostream& operator << (ostream &o, const map<T1, T2> &mp) {")
-    call append(31, "    o << \"{\";")
-    call append(32, "    for (auto it=mp.begin(); it!=mp.end(); it++) {")
-    call append(33, "        o << (it==mp.begin()?\"\":\", \") << it->first << \":\" << it->second;")
-    call append(34, "    }")
-    call append(35, "    o << \"}\";")
-    call append(36, "    return o;")
-    call append(37, "}")
-    call append(38,"inline LL getint(){")
-    call append(39, "   LL _x=0,_tmp=1; char _tc=getchar();")    
-    call append(40, "   while( (_tc<'0'||_tc>'9')&&_tc!='-' ) _tc=getchar();")
-    call append(41, "   if( _tc == '-' ) _tc=getchar() , _tmp = -1;")
-    call append(42, "   while(_tc>='0'&&_tc<='9') _x*=10,_x+=(_tc-'0'),_tc=getchar();")
-    call append(43, "   return _x*_tmp;")
-    call append(44, "}") 
-	call append(45, "#define maxn")
-	call append(46, "int main() {")
-    call append(47, "}")
-    endif
-endfu
-" All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
-" the call to :runtime you can find below.  If you wish to change any of those
-" settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
-" will be overwritten everytime an upgrade of the vim packages is performed.
-" It is recommended to make changes after sourcing debian.vim since it alters
-" the value of the 'compatible' option.
+""""""""""""""""""""""
+" This is for Vundle "
+""""""""""""""""""""""
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" Put your non-Plugin stuff after this line "
+"""""""""""""""""""""""""""""""""""""""""""""
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
@@ -67,15 +38,15 @@ runtime! debian.vim
 " options, so any other options should be set AFTER setting 'compatible'.
 "set compatible
 
-" Vim5 and later versions support syntax highlighting. Uncommenting the next
-" line enables syntax highlighting by default.
+" Vim5 and later versions support syntax highlighting.
+" This enables syntax highlighting by default.
 if has("syntax")
   syntax on
 endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
-"set background=dark
+set background=dark
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -102,41 +73,47 @@ set incsearch		" Incremental search
 
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
-source /etc/vim/vimrc.local
+  source /etc/vim/vimrc.local
 endif
+
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 
 set number
 set nocompatible
 set hlsearch
 set ruler
-"#set cursorline
+" set cursorline
 set background=dark
 set showmode
 set showmatch
-
-set expandtab
+" enable backspace to work
 set backspace=2
+" tab --> spaces
+set expandtab
+" control how many columns text is indented with the reindent operations (<<
+" and >>)
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-
+" Is I use smartindent, autoindent should be set
 set autoindent
 set smartindent
 
-set tw=80 cc=80
-autocmd FileType make set noexpandtab
-
-set pastetoggle=<F2>
+set colorcolumn=81,101
+" Or I could map <F2> to :set paste!  set pastetoggle=<F2>
 
 nmap co :%y+<CR>
-
-nmap <bslash>p :set paste!<CR>
 nmap <bslash>x mzHmx:silent! :%s/[ \t][ \t]*$//g<CR>`xzt`z
 nmap <bslash>t :Tlist<CR>
 imap jj <Esc>
+
+autocmd FileType make set noexpandtab
 
 autocmd FileType c nmap <F9> <ESC>\x:w<CR>:!gcc -O2 -Wall -std=c99 % -o %<<CR>
 autocmd FileType c nmap <F11> <ESC>\x:w<CR>:!./%<<CR>
@@ -184,20 +161,28 @@ autocmd Filetype tex imap <C-S-c> jj<C-S-c>
 autocmd Filetype tex nmap <C-S-x> 0x
 autocmd Filetype tex imap <C-S-x> jj<C-S-x>
 
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype js setlocal ts=2 sw=2 expandtab
+" fold by indent level
 set fdm=indent
 set foldlevel=0
 set foldnestmax=1
 set foldminlines=1
-set hls
 
-syntax on
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-au FocusLost * :set norelativenumber
-au FocusGained * :set relativenumber
+" Use the plugin powerline to replace this
+" set the following line to show statusline always
+" set laststatus=2
+set statusline=%t       "tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -209,9 +194,3 @@ endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = ' -std=c++14 '
