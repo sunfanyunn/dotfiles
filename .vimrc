@@ -1,3 +1,8 @@
+" https://stackoverflow.com/questions/14697797/cant-get-bundleinstall-working-for-vundle/22398235#22398235
+" This line should not be removed as it ensures that various options are
+" properly set to work with the Vim-related packages available in Debian.
+runtime! debian.vim
+
 """"""""""""""""""""""
 " This is for Vundle "
 """"""""""""""""""""""
@@ -14,10 +19,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'powerline/fonts'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -28,10 +36,6 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""
 " Put your non-Plugin stuff after this line "
 """""""""""""""""""""""""""""""""""""""""""""
-
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages available in Debian.
-runtime! debian.vim
 
 " Uncomment the next line to make Vim more Vi-compatible
 " NOTE: debian.vim sets 'nocompatible'.  Setting 'compatible' changes numerous
@@ -107,10 +111,10 @@ set smartindent
 
 set colorcolumn=81,101
 " Or I could map <F2> to :set paste!  set pastetoggle=<F2>
+set pastetoggle=<F2>
 
 nmap co :%y+<CR>
 nmap <bslash>x mzHmx:silent! :%s/[ \t][ \t]*$//g<CR>`xzt`z
-nmap <bslash>t :Tlist<CR>
 imap jj <Esc>
 
 autocmd FileType make set noexpandtab
@@ -194,3 +198,39 @@ endfunc
 
 nnoremap <C-n> :call NumberToggle()<cr>
 
+" Search for selected text, forwards or backwards.
+" http://vim.wikia.com/wiki/Search_for_visually_selected_text
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR><F2>
+
+" to move between tabs
+nnoremap tn :tabnext<CR>
+nnoremap tN :tabprev<CR>
+
+"""""""""""""""""""""""""""""
+" vim-airline setting
+""""""""""""""""""""""""""""""
+let g:airline_theme = 'powerlineish'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#show_buffers = 1
+set t_Co=256
+
+""""""""""""""""""""""""""""""
+" NERDTree setting
+""""""""""""""""""""""""""""""
+nmap <bslash>t :NERDTreeToggle<CR>
+" let NERDTreeWinSize = 23
+
+""""""""""""""""""""""""""""""
+" youcomplete setting
+""""""""""""""""""""""""""""""
+let g:ycm_python_binary_path = '/usr/bin/python3'
