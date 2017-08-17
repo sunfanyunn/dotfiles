@@ -40,3 +40,4 @@
 ## Bug list
 ### js 
 * with 'use strict' keyword, omitting declaration can lead to undesirable behaviors
+* remember to refresh page with ctrl-shift R to clear page cache!
