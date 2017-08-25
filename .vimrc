@@ -116,8 +116,9 @@ set pastetoggle=<F2>
 nmap co :%y+<CR>
 nmap <bslash>x mzHmx:silent! :%s/[ \t][ \t]*$//g<CR>`xzt`z
 imap jj <Esc>
+imap fj <Esc>
+imap jf <Esc>
 
-autocmd FileType make set noexpandtab
 
 autocmd FileType c nmap <F9> <ESC>\x:w<CR>:!gcc -O2 -Wall -std=c99 % -o %<<CR>
 autocmd FileType c nmap <F11> <ESC>\x:w<CR>:!./%<<CR>
@@ -165,12 +166,14 @@ autocmd Filetype tex imap <C-S-c> jj<C-S-c>
 autocmd Filetype tex nmap <C-S-x> 0x
 autocmd Filetype tex imap <C-S-x> jj<C-S-x>
 
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
-autocmd Filetype js setlocal ts=2 sw=2 expandtab
+autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype js setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType make set noexpandtab
+
 " fold by indent level
 set fdm=indent
 set foldlevel=0
-set foldnestmax=1
+set foldnestmax=2
 set foldminlines=1
 
 " Use the plugin powerline to replace this
