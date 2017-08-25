@@ -116,6 +116,9 @@ set pastetoggle=<F2>
 nmap co :%y+<CR>
 nmap <bslash>x mzHmx:silent! :%s/[ \t][ \t]*$//g<CR>`xzt`z
 imap jj <Esc>
+imap fj <Esc>
+imap jf <Esc>
+
 
 autocmd FileType c nmap <F9> <ESC>\x:w<CR>:!gcc -O2 -Wall -std=c99 % -o %<<CR>
 autocmd FileType c nmap <F11> <ESC>\x:w<CR>:!./%<<CR>
@@ -234,3 +237,26 @@ nmap <bslash>t :NERDTreeToggle<CR>
 " youcomplete setting
 """"""""""""""""""""""""""""""
 let g:ycm_python_binary_path = '/usr/bin/python3'
+
+""""""""""""""""""""""""""""""
+" https://github.com/Houl/repmo-vim
+""""""""""""""""""""""""""""""
+" This plugin is not under bundle, put repmo.vim under .vim/plugin
+
+" map a motion and its reverse motion:
+:noremap <expr> h repmo#SelfKey('h', 'l')|sunmap h
+:noremap <expr> l repmo#SelfKey('l', 'h')|sunmap l
+
+" if you like `:noremap j gj', you can keep that:
+:noremap <expr> j repmo#Key('gj', 'gk')|sunmap j
+:noremap <expr> k repmo#Key('gk', 'gj')|sunmap k
+
+" repeat the last [count]motion or the last zap-key:
+:map <expr> ; repmo#LastKey(';')|sunmap ;
+:map <expr> , repmo#LastRevKey(',')|sunmap ,
+
+" add these mappings when repeating with `;' or `,':
+:noremap <expr> f repmo#ZapKey('f')|sunmap f
+:noremap <expr> F repmo#ZapKey('F')|sunmap F
+:noremap <expr> t repmo#ZapKey('t')|sunmap t
+:noremap <expr> T repmo#ZapKey('T')|sunmap T
