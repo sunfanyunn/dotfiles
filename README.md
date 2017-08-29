@@ -37,6 +37,10 @@
 	Execute the macro store in register a on all lines matching pattern.<br>
 	**:g/pattern/norm! @a**
 
+* vim copy visual mode seletected text to system clipboard 
+	https://askubuntu.com/questions/613170/vim-and-system-clipboard
+	"+y to yank, <Ctrl><Shift>v to paste
+
 ## Bug list
 ### js 
 * with 'use strict' keyword, omitting declaration can lead to undesirable behaviors
