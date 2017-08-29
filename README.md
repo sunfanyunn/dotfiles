@@ -38,6 +38,7 @@
 	**:g/pattern/norm! @a**
 
 * vim copy visual mode seletected text to system clipboard 
+
 	https://askubuntu.com/questions/613170/vim-and-system-clipboard
 	"+y to yank, <Ctrl><Shift>v to paste
 
