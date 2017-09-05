@@ -116,9 +116,6 @@ set pastetoggle=<F2>
 nmap co :%y+<CR>
 nmap <bslash>x mzHmx:silent! :%s/[ \t][ \t]*$//g<CR>`xzt`z
 imap jj <Esc>
-imap fj <Esc>
-imap jf <Esc>
-
 
 autocmd FileType c nmap <F9> <ESC>\x:w<CR>:!gcc -O2 -Wall -std=c99 % -o %<<CR>
 autocmd FileType c nmap <F11> <ESC>\x:w<CR>:!./%<<CR>
