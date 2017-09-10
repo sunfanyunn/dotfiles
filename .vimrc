@@ -163,8 +163,8 @@ autocmd Filetype tex imap <C-S-c> jj<C-S-c>
 autocmd Filetype tex nmap <C-S-x> 0x
 autocmd Filetype tex imap <C-S-x> jj<C-S-x>
 
-#autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
-#autocmd Filetype js setlocal ts=2 sts=2 sw=2 expandtab
+"autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
+"autocmd Filetype js setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType make set noexpandtab
 
 " fold by indent level
