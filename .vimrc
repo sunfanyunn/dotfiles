@@ -102,9 +102,9 @@ set backspace=2
 set expandtab
 " control how many columns text is indented with the reindent operations (<<
 " and >>)
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 " Is I use smartindent, autoindent should be set
 set autoindent
 set smartindent
@@ -163,8 +163,8 @@ autocmd Filetype tex imap <C-S-c> jj<C-S-c>
 autocmd Filetype tex nmap <C-S-x> 0x
 autocmd Filetype tex imap <C-S-x> jj<C-S-x>
 
-autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
-autocmd Filetype js setlocal ts=2 sts=2 sw=2 expandtab
+#autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
+#autocmd Filetype js setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType make set noexpandtab
 
 " fold by indent level
