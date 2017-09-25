@@ -2,6 +2,10 @@
 * Terminal: Ctrl-A/Ctrl-E for Home/End
 * vimperator: zZ ==> reset zoom
 
+## Tmux cheat sheet
+* <Prefix> & for killing a window
+* <Prefix> x for killing a pane
+
 ## Vim cheat sheet
 
 * . ==> repeat last change in normal mode
