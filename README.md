@@ -3,8 +3,8 @@
 * vimperator: zZ ==> reset zoom
 
 ## Tmux cheat sheet
-* <Prefix> & for killing a window
-* <Prefix> x for killing a pane
+* ```<Prefix> &``` for killing a window
+* ```<Prefix> x``` for killing a pane
 
 ## Vim cheat sheet
 
