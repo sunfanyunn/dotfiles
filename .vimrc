@@ -257,3 +257,10 @@ let g:ycm_python_binary_path = '/usr/bin/python3'
 :noremap <expr> F repmo#ZapKey('F')|sunmap F
 :noremap <expr> t repmo#ZapKey('t')|sunmap t
 :noremap <expr> T repmo#ZapKey('T')|sunmap T
+
+""""""""""""""
+" Youcompleteme
+""""""""""""""
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>*'
