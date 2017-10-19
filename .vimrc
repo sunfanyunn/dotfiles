@@ -215,6 +215,11 @@ vnoremap <silent> # :<C-U>
 nnoremap tn :tabnext<CR>
 nnoremap tN :tabprev<CR>
 
+""""""""""""""""""""""""""""""""
+" A very important settings here!
+""""""""""""""""""""""""""""""""
+set clipboard=unnamedplus
+
 """""""""""""""""""""""""""""
 " vim-airline setting
 """"""""""""""""""""""""""""""
@@ -227,7 +232,7 @@ set t_Co=256
 """"""""""""""""""""""""""""""
 " NERDTree setting
 """"""""""""""""""""""""""""""
-nmap <bslash>t :NERDTreeToggle<CR>
+nmap <leader>t :NERDTreeToggle<CR>
 " let NERDTreeWinSize = 23
 
 """"""""""""""""""""""""""""""
@@ -264,4 +269,5 @@ let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_error_symbol = '>>'
 let g:ycm_warning_symbol = '>*'
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+noremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
