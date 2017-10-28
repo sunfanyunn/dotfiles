@@ -218,7 +218,7 @@ nnoremap tN :tabprev<CR>
 """"""""""""""""""""""""""""""""
 " A very important settings here!
 """"""""""""""""""""""""""""""""
-set clipboard=unnamedplus
+" set clipboard=unnamedplus (using system clipboard on ubuntu
 
 """""""""""""""""""""""""""""
 " vim-airline setting
