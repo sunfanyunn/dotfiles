@@ -5,7 +5,7 @@
 ## Tmux cheat sheet
 * ```<Prefix> &``` for killing a window
 * ```<Prefix> x``` for killing a pane
-* ```<Prefix>(hold) [j|k|l|h]``` for resizing pane
+* ```<Prefix>(hold) arrowKey``` for resizing pane
 
 ## Vim cheat sheet
 
