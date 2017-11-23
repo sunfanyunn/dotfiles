@@ -10,6 +10,7 @@
 ## Vim cheat sheet
 
 * . ==> repeat last change in normal mode
+* Ctrl-^ to edit the alternate-file
 * same command on contiguous lines
 	1. Select the lines you want to modify using Ctrl-v.
 	2. Press:
