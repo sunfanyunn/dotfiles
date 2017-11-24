@@ -26,7 +26,8 @@ Plugin 'powerline/fonts'
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'Valloric/YouCompleteMe'
-
+Plugin 'vim-syntastic/syntastic'
+Plugin 'davidhalter/jedi-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -128,6 +129,7 @@ autocmd Filetype c nmap <C-S-c> 0i//<Esc>
 autocmd Filetype c imap <C-S-c> jj<C-S-c>
 autocmd Filetype c nmap <C-S-x> 0xx
 autocmd Filetype c imap <C-S-x> jj<C-S-x>
+autocmd Filetype c vmap :norm i#
 
 autocmd FileType cpp nmap ff :!time ./%<
 autocmd FileType cpp nmap <F5>  :!time ./%<<CR>
@@ -142,6 +144,8 @@ autocmd Filetype cpp nmap <C-S-c> 0i//<Esc>
 autocmd Filetype cpp imap <C-S-c> jj<C-S-c>
 autocmd Filetype cpp nmap <C-S-x> 0xx
 autocmd Filetype cpp imap <C-S-x> jj<C-S-x>
+autocmd Filetype cpp vmap <C-S-c> :norm i//<CR>
+autocmd Filetype cpp vmap <C-S-x> :norm 0xx<CR>
 
 autocmd FileType python nmap <F11> <ESC>\x:w<CR>:!python3 %<CR>
 autocmd FileType python nmap <F12> <ESC>\x:w<CR>:!python3 %<CR>
@@ -152,6 +156,8 @@ autocmd Filetype python nmap <C-S-c> 0i#<Esc>
 autocmd Filetype python imap <C-S-c> <Esc><C-S-c>
 autocmd Filetype python nmap <C-S-x> 0x
 autocmd Filetype python imap <C-S-x> <Esc><C-S-x>
+autocmd Filetype python vmap <C-S-c> :norm i#<CR>
+autocmd Filetype python vmap <C-S-x> :norm 0x<CR>
 
 autocmd FileType tex nmap <F10> <ESC>\x:w<CR>:!gnome-open %<.pdf<CR><CR>
 autocmd FileType tex nmap <F12> <ESC>\x:w<CR>:!xelatex %<CR>
@@ -218,7 +224,7 @@ nnoremap tN :tabprev<CR>
 """"""""""""""""""""""""""""""""
 " A very important settings here!
 """"""""""""""""""""""""""""""""
-" set clipboard=unnamedplus (using system clipboard on ubuntu
+set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""
 " vim-airline setting
@@ -270,4 +276,13 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_error_symbol = '>>'
 let g:ycm_warning_symbol = '>*'
 noremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
 
+"""""""""""""
+" vim-syntastic
+"""""""""""""'
+
+"""""""""
+"jedi-vim
+"""""""""
+let g:jedi#completions_enabled = 0
