@@ -1,6 +1,7 @@
 # things to add to .bashrc
 
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
 # for tensorflow
 export CUDA_HOME=/opt/cuda
