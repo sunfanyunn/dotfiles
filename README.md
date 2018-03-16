@@ -8,6 +8,9 @@
 * ```<Prefix>(hold) arrowKey``` for resizing pane
 
 ## Vim cheat sheet
+* Plugin
+	* [repmo.vim](https://github.com/vim-scripts/repmo.vim)
+	* [taglist.vim](https://github.com/vim-scripts/taglist.vim)
 
 * . ==> repeat last change in normal mode
 * Ctrl-^ to edit the alternate-file
