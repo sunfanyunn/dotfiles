@@ -13,6 +13,7 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'powerline/fonts'
@@ -97,6 +98,8 @@ set termencoding=utf-8
 nnoremap j gj
 nnoremap k gk
 
+set cursorline
+set cursorcolumn
 set number
 set nocompatible
 set hlsearch
@@ -214,6 +217,7 @@ set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
+" set statusline+=%{FugitiveStatusline()}
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -315,8 +319,8 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_quiet_messages = { "type": "style" }
 
 """"""""""""""""""""""
@@ -350,4 +354,5 @@ nmap ga <Plug>(EasyAlign)
 " deoplete
 """""
 let g:deoplete#enable_at_startup = 1
-
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
