@@ -27,6 +27,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdcommenter'
 
+
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'leomao/pikacode.vim'
+Plugin 'vim-scripts/repmo.vim'
+
 Plugin 'davidhalter/jedi-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -86,8 +91,8 @@ set fileencoding=utf-8
 set termencoding=utf-8
 
 " move vertically by visual line
-nnoremap j gj
-nnoremap k gk
+"nnoremap j gj
+"nnoremap k gk
 
 set number
 set nocompatible
@@ -246,8 +251,8 @@ nmap <leader>t :NERDTreeToggle<CR>
 :noremap <expr> l repmo#SelfKey('l', 'h')|sunmap l
 
 " if you like `:noremap j gj', you can keep that:
-:noremap <expr> j repmo#Key('gj', 'gk')|sunmap j
-:noremap <expr> k repmo#Key('gk', 'gj')|sunmap k
+":noremap <expr> j repmo#Key('gj', 'gk')|sunmap j
+":noremap <expr> k repmo#Key('gk', 'gj')|sunmap k
 
 " repeat the last [count]motion or the last zap-key:
 :map <expr> ; repmo#LastKey(';')|sunmap ;
@@ -278,3 +283,27 @@ if has('persistent_undo')
     let &undodir = myUndoDir
     set undofile
 endif
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}}
+" => Colors, Fonts, Encoding {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on " Enable syntax highlight
+set background=dark
+colorscheme pikacode
+" Set font according to system
+if has('gui_running')
+  if has('win32') || has('win64')
+    set gfn=Consolas:h16
+  else
+    set gfn=Monospace\ 16
+  endif
+endif
+set fileencodings=utf8
+set encoding=utf8
+" format options
+set fo+=Mm " for multi btye character
+set fo+=crql
+set fo-=t
+set ffs=unix,dos,mac " Default file types
