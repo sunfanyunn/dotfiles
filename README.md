@@ -52,9 +52,3 @@
 	
 	"+y to yank, Ctrl-Shift-v to paste
 * **:set list** to disply invisible characters
-
-## Bug list
-### js 
-* with 'use strict' keyword, omitting declaration can lead to undesirable behaviors
-* remember to refresh page with ctrl-shift R to clear page cache!
-* When using children.length, be careful that even removed elements may affect it!
