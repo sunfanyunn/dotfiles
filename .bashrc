@@ -3,9 +3,9 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-# for tensorflow
-export CUDA_HOME=/opt/cuda
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64:/opt/cuda/extras/CUPTI/lib64"
+# for tensorflow?
+# export CUDA_HOME=/opt/cuda
+# export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64:/opt/cuda/extras/CUPTI/lib64"
 
 # Show git branch name
 force_color_prompt=yes
