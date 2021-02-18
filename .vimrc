@@ -309,7 +309,7 @@ set fo-=t
 set ffs=unix,dos,mac " Default file types
 
 " copy to buffer
-vmap <C-b> :w! ~/.vimbuffer<CR>
-nmap <C-b> :.w! ~/.vimbuffer<CR>
+vmap <leader>c :w! ~/.vimbuffer<CR>
+nmap <leader>c :.w! ~/.vimbuffer<CR>
 " paste from buffer
-map <C-m> :r ~/.vimbuffer<CR>
+map <leader>v :r ~/.vimbuffer<CR>
