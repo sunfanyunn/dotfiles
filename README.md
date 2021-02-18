@@ -8,6 +8,16 @@
 * ```<Prefix>(hold) arrowKey``` for resizing pane
 
 ## Vim cheat sheet
+
+* copy/paste among tmux panes running vim instances
+``
+" copy to buffer
+vmap <C-b> :w! ~/.vimbuffer<CR>
+nmap <C-b> :.w! ~/.vimbuffer<CR>
+" paste from buffer
+map <C-m> :r ~/.vimbuffer<CR>
+```
+
 * Plugin
 	* [repmo.vim](https://github.com/vim-scripts/repmo.vim)
 	* [taglist.vim](https://github.com/vim-scripts/taglist.vim)
