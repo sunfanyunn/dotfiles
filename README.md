@@ -10,7 +10,7 @@
 ## Vim cheat sheet
 
 * copy/paste among tmux panes running vim instances
-``
+```
 " copy to buffer
 vmap <C-b> :w! ~/.vimbuffer<CR>
 nmap <C-b> :.w! ~/.vimbuffer<CR>
