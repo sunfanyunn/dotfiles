@@ -358,7 +358,7 @@ let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " copy to buffer
-vmap <C-b> :w! ~/.vimbuffer<CR>
-nmap <C-b> :.w! ~/.vimbuffer<CR>
+vmap <leader>c :w! ~/.vimbuffer<CR>
+nmap <leader>c :.w! ~/.vimbuffer<CR>
 " paste from buffer
-map <C-m> :r ~/.vimbuffer<CR>
+map <leader>v :r ~/.vimbuffer<CR>
