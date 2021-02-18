@@ -356,3 +356,9 @@ nmap ga <Plug>(EasyAlign)
 let g:deoplete#enable_at_startup = 1
 let g:python2_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
+
+" copy to buffer
+vmap <C-b> :w! ~/.vimbuffer<CR>
+nmap <C-b> :.w! ~/.vimbuffer<CR>
+" paste from buffer
+map <C-m> :r ~/.vimbuffer<CR>
