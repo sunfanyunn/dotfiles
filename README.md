@@ -1,3 +1,15 @@
+## Setup Environment
+
+Install neovim locally is necessary
+```
+$ mkdir -p "$HOME/.local/bin"
+$ curl -fLo "$HOME/.local/bin/nvim" https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+$ (sudo) chmod u+x "$HOME/.local/bin/nvim"
+```
+
+copy file https://raw.githubusercontent.com/fanyun-sun/pika-vim/master/init.vim to `.config/nvim/init.vim`
+
+
 ## General cheat sheet
 * Terminal: Ctrl-A/Ctrl-E for Home/End
 * vimperator: zZ ==> reset zoom
