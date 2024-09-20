@@ -1,0 +1,48 @@
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/svl/u/sunfanyun/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/svl/u/sunfanyun/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/svl/u/sunfanyun/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/svl/u/sunfanyun/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+__conda_setup="$('/viscam/projects/SceneAug/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/viscam/projects/SceneAug/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/viscam/projects/SceneAug/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/viscam/projects/SceneAug/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias sq='squeue -u sunfanyun --format="%10i %.15P %.36j %.8u %.2t %.10M %.6D %R"'
+alias attach='/svl/u/sunfanyun/scripts/sattach_latest.sh'
+
+# Show git branch name
+force_color_prompt=yes
+color_prompt=yes
+parse_git_branch() {
+	 git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+ }
+if [ "$color_prompt" = yes ]; then
+	 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
+ else
+	  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
+fi
+unset color_prompt force_color_prompt
+
+# export PATH=$HOME/bison/bin:$PATH
+
+
